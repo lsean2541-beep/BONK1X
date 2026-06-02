@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bonkxbot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn bot:app"
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
