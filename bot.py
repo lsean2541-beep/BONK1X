@@ -21,12 +21,11 @@ bot = telebot.TeleBot(TOKEN)
 # Welcome & About Handler
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    about_text = (
-        "🤖 **BonkXbot**\n"
-        "Convert any text to speech instantly. Fast, clear, and easy to use.\n\n"
-        "✍️ Just send me any text message, and I will send you back the voice note!"
+    welcome_text = (
+        "Welcome to Bonk1XBot! 🎤\n"
+        "Send me any text, and I'll turn it into a voice message instantly. Try it now."
     )
-    bot.reply_to(message, about_text, parse_mode='Markdown')
+    bot.reply_to(message, welcome_text)
 
 # Text-to-Speech conversion logic
 @bot.message_handler(func=lambda message: True)
